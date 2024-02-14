@@ -29,7 +29,7 @@ public class EmployeeController {
         return employeeService.findAllEmployee();
         }
 	
-	@GetMapping("/*{id}")
+	@GetMapping("/{id}")
 	public Optional<EmployeeEntity> findEmployeeById (@PathVariable("id") Long id) {
 		return employeeService.findById(id);
 		}
@@ -42,7 +42,7 @@ public class EmployeeController {
 	public EmployeeEntity updateEmployee(@RequestBody EmployeeEntity employeeEntity) {
 		return employeeService.updateEmployee(employeeEntity);
 		}
-	@DeleteMapping("/*{id}")
+	@DeleteMapping("/{id}")
 	public void deleteEmployee(@PathVariable("id") Long id) {
 		employeeService.deleteEmployee(id);
 	}
